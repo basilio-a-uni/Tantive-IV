@@ -1,7 +1,10 @@
+set -e
+
 mkdir -p "$HOME/.renimders/notifications"
 mkdir "$HOME/.renimders/archive"
 echo "Created directories: ~/.renimders/notifications and ~/.renimders/archive"
 
+nimble install argparse libnotify
 nim c -d:release "rmd.nim"
 nim c -d:release "rmd_daemon.nim"
 echo "Compiled rmd.nim and rmd_daemon.nim"
